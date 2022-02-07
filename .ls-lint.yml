@@ -1,0 +1,25 @@
+ls:
+  .dir: kebab-case
+  .js: kebab-case | camelCase
+  .jsx: PascalCase
+  .ts: kebab-case | camelCase
+  .tsx: PascalCase
+  .d.ts: kebab-case | camelCase
+  .mock.ts: camelCase
+  .config.js: lowercase
+  src/pages:
+    .tsx: kebabcase
+
+ignore:
+  - ./src/pages/_app.tsx
+  - .idea
+  - .next
+  - .cz-config.js
+  - .env-cmdrc.js
+  - .eslintrc.js
+  - .prettierrc.js
+  - .stylelintrc.js
+  - .git
+  - windi.config.ts
+  - dist
+  - node_modules
