@@ -14,8 +14,10 @@ module.exports = {
         paths: ['.'],
       },
     },
+    'import/core-modules': ['windi.css'],
   },
   rules: {
+    'no-unused-vars': 1,
     'import/no-unresolved': 'error',
     'simple-import-sort/imports': 'error',
     'simple-import-sort/exports': 'error',
@@ -37,13 +39,13 @@ module.exports = {
     'arrow-parens': 0,
     'newline-per-chained-call': 0,
     'react-hooks/rules-of-hooks': 2,
-    'react-hooks/exhaustive-deps': 2,
+    'react-hooks/exhaustive-deps': 1,
     // 禁止使用默认导入
-    'import/no-default-export': 2,
+    'import/no-default-export': 1,
     // 强制在花括号中使用一致的空格
     'object-curly-spacing': ['error', 'always'],
     // 禁止或强制在括号内使用空格
-    'array-bracket-spacing': ['error', 'always'],
+    'array-bracket-spacing': ['warn', 'always'],
     // 强制模板字符串中空格的使用
     'template-curly-spacing': ['error', 'always'],
     // 强制 react 多 prop 新起一行放置

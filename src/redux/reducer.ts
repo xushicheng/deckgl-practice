@@ -1,7 +1,7 @@
 import { combineReducers } from '@reduxjs/toolkit';
 
-import { globalSlice } from './models';
+import { mapboxSlice } from './features/mapbox';
 
 export const appReducer = combineReducers({
-  [globalSlice.name]: globalSlice.reducer,
+  [mapboxSlice.name]: mapboxSlice.reducer,
 });

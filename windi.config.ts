@@ -1,10 +1,11 @@
-import { defineConfig } from 'windicss/helpers'
 import colors from 'material-colors-ts';
+import { defineConfig } from 'windicss/helpers';
 
 export default defineConfig({
+  preflight: false,
   extract: {
-    include: ['**/*.{jsx,tsx,css}'],
-    exclude: ['node_modules', '.git', '.next'],
+    include: [ '**/*.{jsx,tsx,css}' ],
+    exclude: [ 'node_modules', '.git', '.next' ],
   },
   attributify: true,
   shortcuts: {
@@ -33,4 +34,4 @@ export default defineConfig({
       },
     },
   },
-})
+});

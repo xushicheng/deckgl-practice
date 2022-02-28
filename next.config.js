@@ -1,7 +1,8 @@
-const path = require("path");
-const WindiCSSWebpackPlugin = require('windicss-webpack-plugin')
+const path = require('path');
+const WindiCSSWebpackPlugin = require('windicss-webpack-plugin');
 
-module.exports = {
+const config = {
+  reactStrictMode: true,
   swcMinify: true,
   webpack: (config, {}) => {
     config.resolve.alias = {
@@ -12,7 +13,9 @@ module.exports = {
       test: /\.svg$/,
       use: ['@svgr/webpack'],
     });
-    config.plugins.push(new WindiCSSWebpackPlugin);
+    config.plugins.push(new WindiCSSWebpackPlugin());
     return config;
   },
-}
+};
+
+module.exports = config;

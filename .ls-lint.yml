@@ -1,17 +1,25 @@
+# 史上最全 Vue 前端代码风格指南 [https://yuye.fun/post/d984eb1a.html]
 ls:
   .dir: kebab-case
   .js: kebab-case | camelCase
-  .jsx: PascalCase
+  .jsx: 'PascalCase | regex:^index$'
   .ts: kebab-case | camelCase
-  .tsx: PascalCase
+  .tsx: 'PascalCase | regex:^index$'
   .d.ts: kebab-case | camelCase
   .mock.ts: camelCase
   .config.js: lowercase
+  .css: kebab-case
+  .module.css: kebab-case
+  .scss: kebab-case
+  .module.scss: kebab-case
+  .less: kebab-case
+  .module.less: kebab-case
   src/pages:
     .tsx: kebabcase
 
 ignore:
   - ./src/pages/_app.tsx
+  - ./src/pages/_document.tsx
   - .idea
   - .next
   - .cz-config.js

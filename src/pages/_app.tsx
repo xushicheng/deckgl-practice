@@ -1,9 +1,9 @@
-import "windi.css";
+import 'windi.css';
 
-import type { AppProps } from "next/app";
+import type { AppProps } from 'next/app';
 
-import { wrapper } from "@/app/store";
+import { wrapper } from '@/app/store';
 
-const MyApp = ({Component, pageProps}: AppProps) => <Component {...pageProps} />;
+const MyApp = ({ Component, pageProps }: AppProps) => <Component {...pageProps} />;
 
 export default wrapper.withRedux(MyApp);
