@@ -4,7 +4,7 @@ import { TypedUseSelectorHook, useDispatch, useSelector } from 'react-redux';
 
 import { appReducer } from '@/redux/reducer';
 
-const makeStore: any = () =>
+const makeStore = () =>
   configureStore({
     reducer: appReducer,
   });
@@ -20,3 +20,6 @@ export const useAppDispatch = () => useDispatch<AppStore['dispatch']>();
 export const useAppSelector: TypedUseSelectorHook<AppState> = useSelector;
 
 export const wrapper = createWrapper<AppStore>(makeStore);
+
+// use RTK outside of component
+export const store = makeStore();

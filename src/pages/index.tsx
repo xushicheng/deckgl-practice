@@ -1,5 +1,5 @@
 const Index = () => {
-  return <div>Hello World</div>;
+  return <div className="text-4xl font-bold underline">Hello sdfsdfs!</div>;
 };
 
 Index.defaultProps = {};

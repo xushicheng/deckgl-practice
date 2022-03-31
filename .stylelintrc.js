@@ -1,13 +1,16 @@
+const { propertyOrdering, selectorOrdering } = require('stylelint-semantic-groups');
+
 module.exports = {
   extends: [
     'stylelint-config-recommended',
+    'stylelint-config-recommended-less',
     'stylelint-config-recommended-scss',
-    'stylelint-config-prettier',
-    'stylelint-config-prettier-scss',
-    'stylelint-config-css-modules',
-    'stylelint-config-recess-order',
+    'stylelint-config-recommended-vue',
+    'stylelint-prettier/recommended',
   ],
+  plugins: ['stylelint-order'],
   rules: {
-    'no-descending-specificity': null,
+    'order/order': selectorOrdering, // to fine-tune configuration use selectorOrderFactory
+    'order/properties-order': propertyOrdering,
   },
 };

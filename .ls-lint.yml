@@ -11,23 +11,29 @@ ls:
   .css: kebab-case
   .module.css: kebab-case
   .scss: kebab-case
-  .module.scss: kebab-case
+  .module.scss: PascalCase | kebab-case
   .less: kebab-case
   .module.less: kebab-case
   src/pages:
     .tsx: kebabcase
 
 ignore:
-  - ./src/pages/_app.tsx
-  - ./src/pages/_document.tsx
+  - .git
+  - .history
+  - .husky
   - .idea
+  - .vscode
   - .next
   - .cz-config.js
   - .env-cmdrc.js
   - .eslintrc.js
   - .prettierrc.js
   - .stylelintrc.js
-  - .git
-  - windi.config.ts
+  - build
   - dist
   - node_modules
+  - out
+  - windi.config.ts
+  - src/pages/_app.tsx
+  - src/pages/_document.tsx
+  - src/vendor/$umi-request.ts

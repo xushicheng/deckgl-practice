@@ -4,7 +4,9 @@ node_modules
 .pnp.js
 
 # ide
-.vscode
+.vscode/*
+!.vscode/settings.json
+public.tar
 
 # testing
 coverage
@@ -44,6 +46,7 @@ temp
 .idea/**/usage.statistics.xml
 .idea/**/dictionaries
 .idea/**/shelf
+.idea/*
 
 # AWS User-specific
 .idea/**/aws.xml
@@ -113,6 +116,8 @@ fabric.properties
 # 不要在项目里添加图片, 全都上传到cdn
 *.jpg
 *.png
+*.mp4
+*.jpeg
 
 .history
 tsconfig.tsbuildinfo

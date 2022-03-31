@@ -2,8 +2,15 @@ module.exports = {
   root: true,
   parser: '@typescript-eslint/parser',
   parserOptions: { sourceType: 'module' },
-  extends: ['alloy', 'alloy/react', 'alloy/typescript', 'eslint:recommended', 'plugin:react/recommended'],
-  plugins: ['import', 'jsx-a11y', 'react', 'react-hooks', 'simple-import-sort'],
+  extends: [
+    'eslint:recommended',
+    'plugin:react/recommended',
+    'alloy',
+    'alloy/react',
+    'alloy/typescript',
+    'plugin:prettier/recommended',
+  ],
+  plugins: ['react', 'react-hooks', 'react-hooks-addons', 'simple-import-sort', 'import'],
   env: { es6: true },
   globals: { JSX: true, React: true },
   settings: {
@@ -17,50 +24,40 @@ module.exports = {
     'import/core-modules': ['windi.css'],
   },
   rules: {
-    'no-unused-vars': 1,
-    'import/no-unresolved': 'error',
+    'prettier/prettier': [
+      'error',
+      {},
+      {
+        usePrettierrc: true,
+      },
+    ],
+    camelcase: 'off',
+    // 关闭最大参数的限制
+    'max-params': 'off',
+    // 没有用到的变量, 报警
+    'no-unused-vars': 'warn',
+
     'simple-import-sort/imports': 'error',
     'simple-import-sort/exports': 'error',
     'import/first': 'error',
     'import/newline-after-import': 'error',
     'import/no-duplicates': 'error',
-    'linebreak-style': ['off', 'windows'],
-    camelcase: 0,
-    '@typescript-eslint/explicit-member-accessibility': 0,
-    '@typescript-eslint/prefer-optional-chain': 0,
+
+    // 位数过多会丢精度
+    '@typescript-eslint/no-loss-of-precision': 'warn',
     // 优先使用type 而不是interface
     '@typescript-eslint/consistent-type-definitions': ['error', 'type'],
-    '@typescript-eslint/no-invalid-void-type': 0,
-    'react/display-name': 0,
-    'no-param-reassign': 0,
-    'import/prefer-default-export': 0,
-    'arrow-body-style': 0,
-    'function-paren-newline': 0,
-    'arrow-parens': 0,
-    'newline-per-chained-call': 0,
-    'react-hooks/rules-of-hooks': 2,
-    'react-hooks/exhaustive-deps': 1,
-    // 禁止使用默认导入
-    'import/no-default-export': 1,
-    // 强制在花括号中使用一致的空格
-    'object-curly-spacing': ['error', 'always'],
-    // 禁止或强制在括号内使用空格
-    'array-bracket-spacing': ['warn', 'always'],
-    // 强制模板字符串中空格的使用
-    'template-curly-spacing': ['error', 'always'],
+
+    '@typescript-eslint/no-invalid-void-type': 1,
+
+    // 函数组件不允许使用 this
+    'react/no-this-in-sfc': 'warn',
     // 强制 react 多 prop 新起一行放置
     'react/jsx-first-prop-new-line': ['error', 'multiline'],
+    // 强制 jsx 一行只放一个 prop
     'react/jsx-max-props-per-line': ['error', { maximum: 1 }],
     // 强制 prop 缩进
     'react/jsx-indent-props': [2, 2],
-    // 强制尖括号关闭符位置
-    'react/jsx-closing-bracket-location': [
-      2,
-      {
-        nonEmpty: 'tag-aligned',
-        selfClosing: 'tag-aligned',
-      },
-    ],
     // 强制 prop 排序
     'react/jsx-sort-props': [
       'error',
@@ -71,18 +68,19 @@ module.exports = {
         reservedFirst: true, // 内置属性(key, ref)前置
       },
     ],
+    // 强制尖括号关闭符位置
+    'react/jsx-closing-bracket-location': [
+      2,
+      {
+        nonEmpty: 'tag-aligned',
+        selfClosing: 'tag-aligned',
+      },
+    ],
     // 防止在组件内部创建不稳定的组件, 开启 allowAsProps 选项允许 render props 模式
     'react/no-unstable-nested-components': ['error', { allowAsProps: true }],
-    // 最大参数数量改为超过5个报错
-    'max-params': ['error', 5],
+
+    'react-hooks/rules-of-hooks': 'error',
+    'react-hooks/exhaustive-deps': 'warn',
+    'react-hooks-addons/no-unused-deps': 'warn',
   },
-  overrides: [
-    // Next.js needs default exports for pages and API points
-    {
-      files: ['src/pages/**/*'],
-      rules: {
-        'import/no-default-export': 'off',
-      },
-    },
-  ],
 };
