@@ -1,20 +1,27 @@
 {
+  // 插件: WindiCSS IntelliSense
+  "windicss.enableColorDecorators": false,
+  "windicss.foldByLength": true,
+  "windicss.enableVariantCompletion": false,
+  "windicss.sortOnSave": true,
+  // 关掉 @apply 的提示
+  "css.lint.unknownAtRules": "ignore",
+  "scss.lint.unknownAtRules": "ignore",
+  // 插件: Stylelint
+  "css.validate": false,
+  "less.validate": false,
+  "scss.validate": false,
+  "stylelint.validate": ["css", "less", "postcss", "scss", "vue", "sass", ".module.scss"],
+  // 插件: prettier 先运行, eslint 后运行
   "files.eol": "\n",
   "editor.tabSize": 2,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.formatOnPaste": true,
   "editor.formatOnSave": false,
   "editor.codeActionsOnSave": [
-    "source.fixAll.eslint"
-  ],
-  "eslint.validate": [
-    "javascript",
-    "javascriptreact",
-    "vue",
-    "typescript",
-    "typescriptreact"
-  ],
-  "json.format.enable": true,
-  "css.lint.unknownAtRules": "ignore",
-  "scss.lint.unknownAtRules": "ignore",
+    // "source.formatDocument",
+    "source.fixAll"],
+  "eslint.validate": ["javascript", "javascriptreact", "vue", "typescript", "typescriptreact"],
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "tabnine.experimentalAutoImports": true
 }

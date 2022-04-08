@@ -12,5 +12,17 @@ module.exports = {
   rules: {
     'order/order': selectorOrdering, // to fine-tune configuration use selectorOrderFactory
     'order/properties-order': propertyOrdering,
+    'at-rule-no-unknown': [
+      true,
+      {
+        ignoreAtRules: ['extends', 'tailwind'],
+      },
+    ],
+    'scss/at-rule-no-unknown': [
+      true,
+      {
+        ignoreAtRules: ['extends', 'tailwind'],
+      },
+    ],
   },
 };
