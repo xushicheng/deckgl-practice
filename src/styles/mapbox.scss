@@ -1,0 +1,11 @@
+@import '~mapbox-gl/dist/mapbox-gl.css';
+
+.mapboxgl-canvas {
+  outline: none;
+}
+
+// 去除logo
+a.mapboxgl-ctrl-logo,
+.mapboxgl-ctrl-attrib {
+  display: none;
+}

@@ -37,3 +37,4 @@ ignore:
   - src/pages/_app.tsx
   - src/pages/_document.tsx
   - src/vendor/$umi-request.ts
+  - src/vendor/$mapboxgl.ts
